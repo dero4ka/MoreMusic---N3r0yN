@@ -1,0 +1,8 @@
+{
+  "comparator_output": 7,
+  "description": {
+    "translate": "jukebox_song.fardisc.hotel"
+  },
+  "length_in_seconds": 103.2,
+  "sound_event": "fardisc:music_disc.hotel"
+}
