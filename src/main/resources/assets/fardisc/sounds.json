@@ -1,0 +1,10 @@
+{
+  "music_disc.far": {
+    "sounds": [
+      {
+        "name": "fardisc:music_disc/far",
+        "stream": true
+      }
+    ]
+  }
+}

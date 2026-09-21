@@ -1,0 +1,8 @@
+{
+  "comparator_output": 6,
+  "description": {
+    "translate": "jukebox_song.fardisc.far"
+  },
+  "length_in_seconds": 72.3,
+  "sound_event": "fardisc:music_disc.far"
+}
