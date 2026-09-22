@@ -5,5 +5,7 @@
   "item.fardisc.portable_disc_player": "Portable Disc Player",
   "item.fardisc.portable_disc_player.empty": "No disc inserted",
   "item.fardisc.portable_disc_player.playing": "Playing",
-  "item.fardisc.portable_disc_player.paused": "Paused"
+  "item.fardisc.portable_disc_player.paused": "Paused",
+  "item.fardisc.music_disc_hotel": "Music Disc",
+  "jukebox_song.fardisc.hotel": "Hotel"
 }
