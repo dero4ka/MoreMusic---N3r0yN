@@ -29,19 +29,10 @@ public class FarDisc {
             () -> SoundEvent.createVariableRangeEvent(
                     ResourceLocation.fromNamespaceAndPath(MOD_ID, "music_disc.far")));
 
-    public static final DeferredHolder<SoundEvent, SoundEvent> HOTEL_SOUND = SOUNDS.register(
-            "music_disc.hotel",
-            () -> SoundEvent.createVariableRangeEvent(
-                    ResourceLocation.fromNamespaceAndPath(MOD_ID, "music_disc.hotel")));
-
     // Ключ песни для проигрывателя (описание в data/fardisc/jukebox_song/far.json)
     public static final ResourceKey<JukeboxSong> FAR_SONG = ResourceKey.create(
             Registries.JUKEBOX_SONG,
             ResourceLocation.fromNamespaceAndPath(MOD_ID, "far"));
-
-    public static final ResourceKey<JukeboxSong> HOTEL_SONG = ResourceKey.create(
-            Registries.JUKEBOX_SONG,
-            ResourceLocation.fromNamespaceAndPath(MOD_ID, "hotel"));
 
     // Предметы
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MOD_ID);
@@ -52,13 +43,6 @@ public class FarDisc {
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
                     .jukeboxPlayable(FAR_SONG)));
-
-    public static final DeferredItem<Item> MUSIC_DISC_HOTEL = ITEMS.register(
-            "music_disc_hotel",
-            () -> new Item(new Item.Properties()
-                    .stacksTo(1)
-                    .rarity(Rarity.RARE)
-                    .jukeboxPlayable(HOTEL_SONG)));
 
     // Своя вкладка креатива с иконкой-пластинкой
     public static final DeferredRegister<CreativeModeTab> TABS =
@@ -71,7 +55,6 @@ public class FarDisc {
                     .icon(() -> new ItemStack(MUSIC_DISC_FAR.get()))
                     .displayItems((parameters, output) -> {
                         output.accept(MUSIC_DISC_FAR.get());
-                        output.accept(MUSIC_DISC_HOTEL.get());
                     })
                     .build());
 

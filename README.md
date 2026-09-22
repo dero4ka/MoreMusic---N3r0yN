@@ -7,7 +7,7 @@
 2. Скопируйте `gradlew`, `gradlew.bat` и папку `gradle/` из официального шаблона
    NeoForge MDK 1.21.1 (github.com/NeoForgeMDKs/MDK-1.21.1-ModDevGradle) в эту папку
    (или выполните `gradle wrapper`, если Gradle установлен).
-3. `./gradlew build` -> готовый jar в `build/libs/`. (gradlew уже включён в проект.)
+3. `./gradlew build` -> готовый jar в `build/libs/`.
 4. Тест в игре: `./gradlew runClient`.
 
 ## Трек

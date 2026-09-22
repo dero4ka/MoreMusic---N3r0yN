@@ -6,13 +6,5 @@
         "stream": true
       }
     ]
-  },
-  "music_disc.hotel": {
-    "sounds": [
-      {
-        "name": "fardisc:music_disc/hotel",
-        "stream": true
-      }
-    ]
   }
 }
