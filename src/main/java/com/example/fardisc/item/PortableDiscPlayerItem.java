@@ -3,7 +3,7 @@ package com.example.fardisc.item;
 import com.example.fardisc.FarDisc;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -39,7 +39,7 @@ public class PortableDiscPlayerItem extends Item {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
         // Извлечь диск.
@@ -52,7 +52,7 @@ public class PortableDiscPlayerItem extends Item {
                     player.drop(disc, false);
                 }
             }
-            return InteractionResult.SUCCESS;
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
         }
 
         // Вставить диск из второй руки.
@@ -68,14 +68,14 @@ public class PortableDiscPlayerItem extends Item {
                 if (!level.isClientSide) {
                     otherStack.shrink(1);
                 }
-                return InteractionResult.SUCCESS;
+                return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
             }
-            return InteractionResult.PASS;
+            return InteractionResultHolder.pass(stack);
         }
 
         // Пауза / продолжить.
         stack.set(FarDisc.PLAYING.get(), !isPlaying(stack));
-        return InteractionResult.SUCCESS;
+        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }
 
     @Override
