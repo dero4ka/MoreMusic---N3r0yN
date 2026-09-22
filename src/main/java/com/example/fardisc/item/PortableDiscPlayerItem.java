@@ -1,6 +1,7 @@
 package com.example.fardisc.item;
 
 import com.example.fardisc.FarDisc;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -87,5 +88,12 @@ public class PortableDiscPlayerItem extends Item {
         } else {
             tooltip.add(Component.translatable("item.fardisc.portable_disc_player.empty"));
         }
+
+        tooltip.add(Component.translatable("item.fardisc.portable_disc_player.usage.insert")
+                .withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("item.fardisc.portable_disc_player.usage.toggle")
+                .withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("item.fardisc.portable_disc_player.usage.eject")
+                .withStyle(ChatFormatting.GRAY));
     }
 }

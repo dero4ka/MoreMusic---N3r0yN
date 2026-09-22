@@ -7,5 +7,8 @@
   "item.fardisc.portable_disc_player.playing": "Играет",
   "item.fardisc.portable_disc_player.paused": "На паузе",
   "item.fardisc.music_disc_hotel": "Музыкальная пластинка",
-  "jukebox_song.fardisc.hotel": "Hotel"
+  "jukebox_song.fardisc.hotel": "plasmix2 - Elevator Cutscene",
+  "item.fardisc.portable_disc_player.usage.insert": "ПКМ, держа диск во второй руке — вставить",
+  "item.fardisc.portable_disc_player.usage.toggle": "ПКМ — играть/пауза",
+  "item.fardisc.portable_disc_player.usage.eject": "Shift + ПКМ — извлечь диск"
 }
