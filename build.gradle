@@ -16,15 +16,16 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-// Позволяет встроить сторонние библиотеки прямо в jar мода (Jar-in-Jar),
-// чтобы игрокам не пришлось ставить их отдельно.
-jarJar.enable()
-
 dependencies {
     // Чистый Java MP3-декодер для проигрывания интернет-потоков колонкой.
-    implementation 'javazoom:jlayer:1.0.1'
+    // Jar-in-Jar встраивает его прямо в jar мода, включать отдельно не нужно.
+    jarJar(implementation('javazoom:jlayer:1.0.1')) {
+        version {
+            strictly '[1.0.1,1.1)'
+            prefer '1.0.1'
+        }
+    }
     additionalRuntimeClasspath 'javazoom:jlayer:1.0.1'
-    jarJar(group: 'javazoom', name: 'jlayer', version: '[1.0.1,1.1)')
 }
 
 neoForge {
