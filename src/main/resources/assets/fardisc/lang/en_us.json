@@ -12,6 +12,9 @@
   "item.fardisc.portable_disc_player.usage.toggle": "Right-click to play/pause",
   "item.fardisc.portable_disc_player.usage.eject": "Shift + right-click to eject the disc",
   "item.fardisc.speaker": "Speaker",
-  "item.fardisc.speaker.usage": "Right-click to start/stop the internet radio stream",
-  "item.fardisc.speaker.note": "Stream URL is set in the mod config (MP3 only)"
+  "item.fardisc.speaker.usage": "Right-click to play/pause",
+  "item.fardisc.speaker.no_url": "No stream URL set",
+  "item.fardisc.speaker.usage_set": "Shift + right-click to set the stream URL",
+  "item.fardisc.speaker.set_url": "Set stream URL",
+  "item.fardisc.speaker.url_field": "Stream URL"
 }

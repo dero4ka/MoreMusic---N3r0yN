@@ -12,6 +12,9 @@
   "item.fardisc.portable_disc_player.usage.toggle": "ПКМ — играть/пауза",
   "item.fardisc.portable_disc_player.usage.eject": "Shift + ПКМ — извлечь диск",
   "item.fardisc.speaker": "Колонка",
-  "item.fardisc.speaker.usage": "ПКМ — включить/выключить интернет-радио",
-  "item.fardisc.speaker.note": "Ссылка задаётся в конфиге мода (только MP3)"
+  "item.fardisc.speaker.usage": "ПКМ — играть/пауза",
+  "item.fardisc.speaker.no_url": "Ссылка не задана",
+  "item.fardisc.speaker.usage_set": "Shift + ПКМ — задать ссылку на поток",
+  "item.fardisc.speaker.set_url": "Ссылка на поток",
+  "item.fardisc.speaker.url_field": "Ссылка на поток"
 }

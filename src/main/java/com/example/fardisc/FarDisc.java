@@ -68,7 +68,7 @@ public class FarDisc {
             "portable_disc_player",
             () -> new com.example.fardisc.item.PortableDiscPlayerItem(new Item.Properties().stacksTo(1)));
 
-    // Колонка: играет интернет-радио (MP3-поток) по ссылке из конфига мода.
+    // Колонка: играет интернет-радио (MP3-поток) по ссылке, заданной в самом предмете.
     public static final DeferredItem<Item> SPEAKER = ITEMS.register(
             "speaker",
             () -> new com.example.fardisc.item.SpeakerItem(new Item.Properties().stacksTo(1)));
@@ -87,6 +87,13 @@ public class FarDisc {
             DATA_COMPONENTS.register("playing", () -> DataComponentType.<Boolean>builder()
                     .persistent(Codec.BOOL)
                     .networkSynchronized(ByteBufCodecs.BOOL)
+                    .build());
+
+    // Ссылка на поток, которую игрок задаёт прямо в игре (своя у каждой колонки).
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> SPEAKER_URL =
+            DATA_COMPONENTS.register("speaker_url", () -> DataComponentType.<String>builder()
+                    .persistent(Codec.STRING)
+                    .networkSynchronized(ByteBufCodecs.STRING_UTF8)
                     .build());
 
     // Своя вкладка креатива с иконкой-пластинкой
