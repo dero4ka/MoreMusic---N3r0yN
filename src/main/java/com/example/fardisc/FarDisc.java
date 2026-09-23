@@ -68,6 +68,11 @@ public class FarDisc {
             "portable_disc_player",
             () -> new com.example.fardisc.item.PortableDiscPlayerItem(new Item.Properties().stacksTo(1)));
 
+    // Колонка: играет интернет-радио (MP3-поток) по ссылке из конфига мода.
+    public static final DeferredItem<Item> SPEAKER = ITEMS.register(
+            "speaker",
+            () -> new com.example.fardisc.item.SpeakerItem(new Item.Properties().stacksTo(1)));
+
     // Компоненты данных предмета: вставлен ли диск и играет ли он сейчас.
     public static final DeferredRegister<DataComponentType<?>> DATA_COMPONENTS =
             DeferredRegister.create(Registries.DATA_COMPONENT_TYPE, MOD_ID);
@@ -97,13 +102,15 @@ public class FarDisc {
                         output.accept(MUSIC_DISC_FAR.get());
                         output.accept(MUSIC_DISC_HOTEL.get());
                         output.accept(PORTABLE_DISC_PLAYER.get());
+                        output.accept(SPEAKER.get());
                     })
                     .build());
 
-    public FarDisc(IEventBus modEventBus) {
+    public FarDisc(IEventBus modEventBus, net.neoforged.fml.ModContainer container) {
         SOUNDS.register(modEventBus);
         ITEMS.register(modEventBus);
         DATA_COMPONENTS.register(modEventBus);
         TABS.register(modEventBus);
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.COMMON, FarDiscConfig.SPEC);
     }
 }

@@ -6,11 +6,26 @@ plugins {
 version = mod_version
 group = mod_group_id
 
+repositories {
+    mavenCentral()
+}
+
 base {
     archivesName = mod_id
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+// Позволяет встроить сторонние библиотеки прямо в jar мода (Jar-in-Jar),
+// чтобы игрокам не пришлось ставить их отдельно.
+jarJar.enable()
+
+dependencies {
+    // Чистый Java MP3-декодер для проигрывания интернет-потоков колонкой.
+    implementation 'javazoom:jlayer:1.0.1'
+    additionalRuntimeClasspath 'javazoom:jlayer:1.0.1'
+    jarJar(group: 'javazoom', name: 'jlayer', version: '[1.0.1,1.1)')
+}
 
 neoForge {
     version = project.neo_version
