@@ -31,14 +31,6 @@ neoForge {
     version = project.neo_version
 
     runs {
-        configureEach {
-            dependencies {
-                // Делает jlayer доступным во время запуска (runClient/runServer),
-                // не только при компиляции.
-                runtime 'javazoom:jlayer:1.0.1'
-            }
-        }
-
         client {
             client()
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
